@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BYD Atto 3 Advanced Plus 2026 | BYD Haka Makassar</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #060609;
+    --dark: #0d0d14;
+    --card: #111118;
+    --border: rgba(255,255,255,0.07);
+    --cyan: #00d4ff;
+    --cyan-dim: rgba(0,212,255,0.12);
+    --cyan-glow: rgba(0,212,255,0.35);
+    --green: #00ff9d;
+    --white: #f0f4f8;
+    --muted: #8a9ab0;
+    --accent2: #ff6b35;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  section { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: linear-gradient(135deg, #060609 0%, #0a0a18 50%, #060a12 100%);
+    overflow: hidden;
+  }
+
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent);
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .orb-1 { width: 600px; height: 600px; background: rgba(0,212,255,0.08); top: -100px; right: -150px; }
+  .orb-2 { width: 400px; height: 400px; background: rgba(0,255,157,0.05); bottom: 100px; left: -100px; }
+
+  /* NAV */
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 48px;
+    position: relative; z-index: 10;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .byd-badge {
+    width: 48px; height: 48px;
+    border: 2px solid var(--cyan);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue';
+    font-size: 16px;
+    color: var(--cyan);
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px var(--cyan-glow), inset 0 0 20px rgba(0,212,255,0.05);
+  }
+
+  .nav-brand-text {
+    display: flex; flex-direction: column;
+    line-height: 1.1;
+  }
+  .nav-brand-text span:first-child { font-size: 11px; color: var(--cyan); letter-spacing: 3px; font-weight: 500; text-transform: uppercase; }
+  .nav-brand-text span:last-child { font-size: 13px; color: var(--muted); letter-spacing: 1px; }
+
+  .nav-contact {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+  .nav-contact strong { color: var(--white); font-weight: 500; }
+
+  /* HERO CONTENT */
+  .hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 48px;
+    position: relative; z-index: 5;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-tag-line {
+    width: 32px; height: 1px; background: var(--cyan);
+  }
+  .hero-tag-text {
+    font-size: 11px; letter-spacing: 4px; font-weight: 500;
+    color: var(--cyan); text-transform: uppercase;
+  }
+
+  .hero-model {
+    font-family: 'Bebas Neue';
+    font-size: clamp(64px, 10vw, 130px);
+    line-height: 0.88;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+  .hero-model .line1 { color: var(--white); display: block; }
+  .hero-model .line2 { 
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--cyan);
+    display: block;
+  }
+  .hero-model .line3 { 
+    color: var(--cyan);
+    display: block;
+    font-size: clamp(32px, 5vw, 60px);
+    letter-spacing: 8px;
+  }
+
+  .hero-tagline {
+    font-size: clamp(13px, 1.5vw, 16px);
+    color: var(--muted);
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-width: 480px;
+    line-height: 1.7;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+
+  .hero-price-block {
+    display: flex; align-items: flex-end; gap: 24px;
+    animation: fadeUp 0.8s 0.65s ease both;
+  }
+  .hero-price-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+  .hero-price-value {
+    font-family: 'Barlow Condensed';
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+  }
+  .hero-price-value span { color: var(--cyan); }
+  .hero-price-note { font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-top: 6px; }
+
+  .hero-cta-row {
+    display: flex; gap: 16px; margin-top: 36px;
+    animation: fadeUp 0.8s 0.8s ease both;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--cyan);
+    color: var(--black);
+    font-family: 'Barlow Condensed'; font-size: 13px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    border: none; cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
+
+  .btn-ghost {
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Barlow Condensed'; font-size: 13px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+
+  /* HERO CAR VISUAL */
+  .hero-visual {
+    position: absolute;
+    right: -40px; top: 50%; transform: translateY(-50%);
+    width: min(55%, 700px);
+    opacity: 0.15;
+    animation: carReveal 1.2s 0.5s ease both;
+  }
+
+  .car-silhouette {
+    width: 100%;
+    filter: drop-shadow(0 0 40px rgba(0,212,255,0.3));
+  }
+
+  /* HERO BOTTOM STATS */
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    position: relative; z-index: 5;
+    animation: fadeUp 0.8s 1s ease both;
+  }
+
+  .stat-item {
+    padding: 28px 32px;
+    border-right: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: rgba(0,212,255,0.04); }
+  .stat-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0;
+    width: 3px; height: 0;
+    background: var(--cyan);
+    transition: height 0.4s;
+  }
+  .stat-item:hover::before { height: 100%; }
+
+  .stat-value {
+    font-family: 'Bebas Neue';
+    font-size: 42px;
+    color: var(--cyan);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+  .stat-unit { font-size: 14px; color: var(--muted); margin-left: 3px; }
+  .stat-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 6px; }
+
+  /* ── SECTION COMMON ── */
+  .section-header {
+    text-align: center;
+    padding: 80px 48px 50px;
+  }
+  .section-eyebrow {
+    font-size: 10px; letter-spacing: 5px; color: var(--cyan);
+    text-transform: uppercase; font-weight: 500; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .section-eyebrow::before, .section-eyebrow::after {
+    content: ''; width: 40px; height: 1px; background: var(--cyan);
+  }
+  .section-title {
+    font-family: 'Bebas Neue';
+    font-size: clamp(42px, 6vw, 72px);
+    letter-spacing: 3px;
+    line-height: 0.95;
+    color: var(--white);
+  }
+  .section-title em { color: var(--cyan); font-style: normal; }
+  .section-sub {
+    font-size: 14px; color: var(--muted); max-width: 500px;
+    margin: 16px auto 0; line-height: 1.8; letter-spacing: 0.5px;
+  }
+
+  /* ── FITUR UTAMA ── */
+  .features {
+    background: var(--dark);
+    padding: 0 48px 80px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .feature-card {
+    background: var(--card);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .feature-card:hover { transform: translateY(-4px); }
+  .feature-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    pointer-events: none;
+  }
+  .feature-card:hover::after { border-color: var(--cyan-dim); }
+
+  .feature-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #0d1520 0%, #0a1018 100%);
+    border-left: 3px solid var(--cyan);
+  }
+
+  .feature-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .feature-icon svg { width: 22px; height: 22px; stroke: var(--cyan); fill: none; stroke-width: 1.5; }
+
+  .feature-number {
+    font-family: 'Bebas Neue';
+    font-size: 56px;
+    color: var(--cyan);
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .feature-number span { font-size: 22px; color: var(--muted); }
+
+  .feature-title {
+    font-family: 'Barlow Condensed';
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--white); margin-bottom: 10px;
+  }
+
+  .feature-desc {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  .feature-badge {
+    display: inline-block; margin-top: 14px;
+    padding: 5px 12px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,212,255,0.2);
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--cyan); text-transform: uppercase;
+  }
+
+  /* ── SPESIFIKASI ── */
+  .specs {
+    background: var(--black);
+    padding: 0 48px 80px;
+  }
+
+  .specs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .spec-group {
+    background: var(--card);
+    padding: 36px 32px;
+  }
+
+  .spec-group-title {
+    font-family: 'Barlow Condensed';
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .spec-group-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .spec-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .spec-row:last-child { border-bottom: none; }
+
+  .spec-key { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; }
+  .spec-val {
+    font-family: 'Barlow Condensed';
+    font-size: 16px; font-weight: 600;
+    color: var(--white); text-align: right;
+    letter-spacing: 0.5px;
+  }
+  .spec-val.accent { color: var(--cyan); }
+
+  /* ── ADAS ── */
+  .adas {
+    background: linear-gradient(180deg, var(--dark) 0%, #060a12 100%);
+    padding: 0 48px 80px;
+  }
+
+  .adas-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .adas-item {
+    background: var(--card);
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .adas-item::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .adas-item:hover::before { transform: scaleX(1); }
+  .adas-item:hover { background: rgba(0,212,255,0.05); }
+
+  .adas-icon-wrap {
+    width: 52px; height: 52px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+    background: rgba(0,212,255,0.05);
+    transition: all 0.3s;
+  }
+  .adas-item:hover .adas-icon-wrap {
+    border-color: var(--cyan);
+    box-shadow: 0 0 16px var(--cyan-glow);
+  }
+  .adas-icon-wrap svg { width: 22px; height: 22px; stroke: var(--cyan); fill: none; stroke-width: 1.5; }
+
+  .adas-name {
+    font-family: 'Barlow Condensed';
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--white); line-height: 1.3;
+  }
+
+  /* ── WARNA ── */
+  .colors {
+    background: var(--black);
+    padding: 0 48px 80px;
+  }
+
+  .colors-row {
+    display: flex; gap: 16px; justify-content: center;
+    flex-wrap: wrap; margin-top: 40px;
+  }
+
+  .color-option {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .color-option:hover { transform: translateY(-6px); }
+
+  .color-swatch {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    transition: box-shadow 0.3s;
+  }
+  .color-option:hover .color-swatch {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 2px var(--cyan);
+  }
+  .color-swatch::after {
+    content: '';
+    position: absolute; inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.3), transparent 60%);
+  }
+
+  .color-name {
+    font-size: 11px; letter-spacing: 2px; color: var(--muted);
+    text-transform: uppercase; text-align: center;
+  }
+
+  /* ── PERBANDINGAN VARIAN ── */
+  .compare {
+    background: var(--dark);
+    padding: 0 48px 80px;
+  }
+
+  .compare-table {
+    margin-top: 40px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .compare-header {
+    display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr;
+    background: rgba(0,212,255,0.05);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-cell {
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .compare-cell:last-child { border-right: none; }
+
+  .compare-header .compare-cell {
+    font-family: 'Barlow Condensed'; font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+  }
+  .compare-header .compare-cell.highlight {
+    background: var(--cyan-dim);
+    color: var(--cyan);
+  }
+
+  .compare-row {
+    display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row:hover { background: rgba(255,255,255,0.02); }
+
+  .compare-row .compare-cell { color: var(--muted); font-size: 13px; }
+  .compare-row .compare-cell:first-child { color: var(--white); font-weight: 400; }
+  .compare-row .compare-cell.highlight {
+    background: rgba(0,212,255,0.04);
+    color: var(--cyan);
+    font-weight: 500;
+  }
+  .compare-row .compare-cell.check-yes { color: var(--green); font-size: 16px; }
+  .compare-row .compare-cell.check-no { color: var(--border); font-size: 16px; }
+
+  .variant-label {
+    font-family: 'Barlow Condensed'; font-size: 13px; font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .variant-price {
+    font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: 0.5px;
+  }
+
+  /* ── CTA BOTTOM ── */
+  .cta-bottom {
+    background: linear-gradient(135deg, #060a12 0%, #0a0f1a 50%, #060609 100%);
+    padding: 80px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bottom::before {
+    content: '';
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue';
+    font-size: clamp(48px, 7vw, 88px);
+    letter-spacing: 4px;
+    line-height: 0.95;
+    margin-bottom: 24px;
+  }
+
+  .cta-contact-grid {
+    display: flex; justify-content: center; gap: 32px;
+    flex-wrap: wrap; margin-top: 48px;
+  }
+
+  .cta-contact-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 24px 36px;
+    text-align: left;
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .cta-contact-item:hover {
+    border-color: var(--cyan);
+    transform: translateY(-4px);
+  }
+  .cta-contact-item::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--cyan);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .cta-contact-item:hover::before { transform: scaleX(1); }
+
+  .contact-label { font-size: 10px; letter-spacing: 3px; color: var(--cyan); text-transform: uppercase; margin-bottom: 8px; }
+  .contact-value { font-family: 'Barlow Condensed'; font-size: 18px; font-weight: 600; color: var(--white); }
+  .contact-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+
+  footer p { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .footer-logo { font-family: 'Bebas Neue'; font-size: 18px; color: var(--cyan); letter-spacing: 3px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes carReveal {
+    from { opacity: 0; transform: translateY(-50%) translateX(60px); }
+    to { opacity: 0.15; transform: translateY(-50%) translateX(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--green);
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--cyan-dim), var(--border), transparent);
+    margin: 0 48px;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav { padding: 20px 24px; }
+    .nav-contact { display: none; }
+    .hero-content { padding: 0 24px; }
+    .hero-visual { display: none; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .features { padding: 0 24px 60px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-card.featured { grid-column: span 1; }
+    .specs { padding: 0 24px 60px; }
+    .specs-layout { grid-template-columns: 1fr; }
+    .adas { padding: 0 24px 60px; }
+    .adas-grid { grid-template-columns: repeat(2, 1fr); }
+    .colors { padding: 0 24px 60px; }
+    .compare { padding: 0 24px 60px; }
+    .compare-header, .compare-row { grid-template-columns: 1.5fr 1fr 1.2fr; }
+    .compare-header .compare-cell:last-child,
+    .compare-row .compare-cell:last-child { display: none; }
+    .cta-bottom { padding: 60px 24px; }
+    footer { padding: 20px 24px; }
+    .section-header { padding: 60px 24px 40px; }
+    .stat-item { padding: 20px; }
+    .stat-value { font-size: 32px; }
+    .section-divider { margin: 0 24px; }
+    .cta-contact-grid { flex-direction: column; align-items: center; }
+    .cta-contact-item { width: 100%; max-width: 360px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+
+  <!-- Car silhouette -->
+  <div class="hero-visual">
+    <svg class="car-silhouette" viewBox="0 0 800 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- SUV body -->
+      <g filter="url(#glow)">
+        <!-- Main body -->
+        <path d="M60 250 L60 200 Q65 180 90 165 L180 130 Q240 100 320 90 L500 88 Q580 90 640 115 L700 145 Q730 162 740 185 L745 250 Z" 
+              fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.5" opacity="0.9"/>
+        <!-- Roof -->
+        <path d="M180 130 Q220 88 290 78 L510 76 Q570 78 620 110 L640 115 L500 88 L320 90 L180 130Z" 
+              fill="url(#roofGrad)" stroke="#00d4ff" stroke-width="1" opacity="0.7"/>
+        <!-- Windows -->
+        <path d="M210 128 L280 88 L390 82 L390 125 Z" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
+        <path d="M400 80 L530 80 L590 112 L400 124 Z" fill="#00d4ff" opacity="0.12" stroke="#00d4ff" stroke-width="0.8"/>
+        <!-- Pillar -->
+        <line x1="398" y1="80" x2="398" y2="126" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+        <!-- Front grill -->
+        <path d="M700 165 L745 195 L745 230 L700 220 Z" fill="url(#frontGrad)" stroke="#00d4ff" stroke-width="1"/>
+        <!-- Grill lines -->
+        <line x1="710" y1="185" x2="742" y2="200" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+        <line x1="710" y1="195" x2="742" y2="210" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+        <line x1="710" y1="205" x2="742" y2="220" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+        <!-- Headlight -->
+        <path d="M718 168 L740 178 L742 188 L715 178 Z" fill="#00d4ff" opacity="0.7"/>
+        <path d="M718 168 L740 178 L742 188 L715 178 Z" fill="#ffffff" opacity="0.3"/>
+        <!-- Taillight -->
+        <path d="M62 190 L80 185 L80 210 L62 215 Z" fill="#ff4444" opacity="0.6"/>
+        <!-- Door lines -->
+        <line x1="280" y1="130" x2="270" y2="248" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+        <line x1="480" y1="126" x2="475" y2="248" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+        <line x1="600" y1="118" x2="600" y2="248" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+        <!-- Handle lines -->
+        <line x1="340" y1="185" x2="390" y2="183" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+        <line x1="510" y1="183" x2="560" y2="181" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+        <!-- Wheels -->
+        <circle cx="185" cy="258" r="52" fill="#0a0a14" stroke="#00d4ff" stroke-width="1.5"/>
+        <circle cx="185" cy="258" r="38" fill="#060608" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+        <circle cx="185" cy="258" r="18" fill="#00d4ff" opacity="0.15"/>
+        <circle cx="185" cy="258" r="6" fill="#00d4ff" opacity="0.5"/>
+        <!-- Wheel spokes -->
+        <line x1="185" y1="222" x2="185" y2="240" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="185" y1="276" x2="185" y2="294" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="149" y1="258" x2="167" y2="258" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="203" y1="258" x2="221" y2="258" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="159" y1="232" x2="172" y2="245" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="198" y1="271" x2="211" y2="284" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="159" y1="284" x2="172" y2="271" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="198" y1="245" x2="211" y2="232" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+
+        <circle cx="610" cy="258" r="52" fill="#0a0a14" stroke="#00d4ff" stroke-width="1.5"/>
+        <circle cx="610" cy="258" r="38" fill="#060608" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+        <circle cx="610" cy="258" r="18" fill="#00d4ff" opacity="0.15"/>
+        <circle cx="610" cy="258" r="6" fill="#00d4ff" opacity="0.5"/>
+        <line x1="610" y1="222" x2="610" y2="240" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="610" y1="276" x2="610" y2="294" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="574" y1="258" x2="592" y2="258" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="628" y1="258" x2="646" y2="258" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="584" y1="232" x2="597" y2="245" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="623" y1="271" x2="636" y2="284" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="584" y1="284" x2="597" y2="271" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <line x1="623" y1="245" x2="636" y2="232" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+        <!-- Ground shadow -->
+        <ellipse cx="400" cy="312" rx="320" ry="16" fill="url(#shadowGrad)" opacity="0.4"/>
+        <!-- Ground line -->
+        <line x1="60" y1="310" x2="750" y2="310" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+        <!-- Charge port glow -->
+        <circle cx="745" cy="145" r="8" fill="#00d4ff" opacity="0.6"/>
+        <circle cx="745" cy="145" r="14" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+        <!-- Roof detail - panoramic sunroof -->
+        <rect x="240" y="80" width="270" height="44" rx="4" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.25"/>
+        <rect x="250" y="83" width="248" height="38" rx="3" fill="#00d4ff" opacity="0.04"/>
+      </g>
+      <defs>
+        <linearGradient id="bodyGrad" x1="60" y1="165" x2="745" y2="250" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#0f1520"/>
+          <stop offset="50%" stop-color="#0d1828"/>
+          <stop offset="100%" stop-color="#0a1218"/>
+        </linearGradient>
+        <linearGradient id="roofGrad" x1="180" y1="76" x2="640" y2="130" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#101820"/>
+          <stop offset="100%" stop-color="#0a1015"/>
+        </linearGradient>
+        <linearGradient id="frontGrad" x1="700" y1="165" x2="745" y2="230" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1a2535"/>
+          <stop offset="100%" stop-color="#0d1520"/>
+        </linearGradient>
+        <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00d4ff"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-logo">
+      <div class="byd-badge">BYD</div>
+      <div class="nav-brand-text">
+        <span>Haka Karebosi</span>
+        <span>Authorized Dealer · Makassar</span>
+      </div>
+    </div>
+    <div class="nav-contact">
+      <strong>AWI — Sales Consultant</strong><br>
+      0822 5945 2349<br>
+      www.bydhakamakassar.id
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <div class="hero-tag-line"></div>
+      <span class="hero-tag-text"><span class="live-dot"></span>New 2026 · Diluncurkan di IIMS 2026</span>
+    </div>
+
+    <div class="hero-model">
+      <span class="line1">BYD</span>
+      <span class="line2">ATTO 3</span>
+      <span class="line3">ADVANCED PLUS</span>
+    </div>
+
+    <p class="hero-tagline">
+      SUV Listrik Premium — Keseimbangan sempurna antara performa, kenyamanan, dan teknologi keselamatan aktif untuk mobilitas harian Makassar.
+    </p>
+
+    <div class="hero-price-block">
+      <div>
+        <div class="hero-price-label">OTR Makassar</div>
+        <div class="hero-price-value">Rp <span>431</span> Juta</div>
+        <div class="hero-price-note">Harga resmi · Garansi Resmi BYD</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="https://wa.me/6282259452349?text=Halo%20AWI%2C%20saya%20tertarik%20dengan%20BYD%20Atto%203%20Advanced%20Plus%202026.%20Bisa%20minta%20info%20lebih%20lanjut?" class="btn-primary">Test Drive Sekarang</a>
+      <a href="https://wa.me/6282259452349?text=Halo%20AWI%2C%20tolong%20hitung%20simulasi%20kredit%20BYD%20Atto%203%20Advanced%20Plus%202026" class="btn-ghost">Simulasi Kredit</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-value">410<span class="stat-unit">km</span></div>
+      <div class="stat-label">Jarak Tempuh</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">70<span class="stat-unit">kW</span></div>
+      <div class="stat-label">DC Fast Charging</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">49.92<span class="stat-unit">kWh</span></div>
+      <div class="stat-label">Kapasitas Baterai</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">8<span class="stat-unit">thn</span></div>
+      <div class="stat-label">Garansi Baterai</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FITUR UTAMA ═══ -->
+<section class="features">
+  <div class="section-header">
+    <div class="section-eyebrow">Keunggulan</div>
+    <div class="section-title">FITUR <em>UNGGULAN</em></div>
+    <p class="section-sub">Dirancang untuk memenuhi standar mobilitas modern dengan teknologi terdepan di kelasnya.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card featured">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="feature-number">410<span> km</span></div>
+      <div class="feature-title">Jarak Tempuh Nyata</div>
+      <div class="feature-desc">Baterai Blade LFP 49,92 kWh — cukup untuk Makassar–Pare-Pare PP tanpa ngecas. DC fast charging 70 kW: dari 10% ke 80% hanya ±45 menit.</div>
+      <span class="feature-badge">Blade Battery LFP</span>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8,21 12,17 16,21"/></svg>
+      </div>
+      <div class="feature-number">15.6<span>"</span></div>
+      <div class="feature-title">Layar Sentuh Rotasi</div>
+      <div class="feature-desc">Touchscreen 15,6 inci yang bisa diputar, jadi pusat kendali semua fitur kendaraan.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="feature-number">5<span> ADAS</span></div>
+      <div class="feature-title">Keselamatan Aktif</div>
+      <div class="feature-desc">Sistem ADAS lengkap: AEB, ACC Stop & Go, Lane Keeping, Lane Departure Warning, dan Door Open Warning.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="feature-number">Rp0<span>/L</span></div>
+      <div class="feature-title">Bebas BBM Selamanya</div>
+      <div class="feature-desc">Estimasi biaya listrik Makassar ~Rp 30–50 ribu per 100 km. Hemat vs BBM yang bisa 5–8x lebih mahal.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <div class="feature-number">Rp0<span></span></div>
+      <div class="feature-title">PKB & PPnBM 0%</div>
+      <div class="feature-desc">Pajak kendaraan bermotor 0% untuk EV di Sulsel (Pergub) + PPnBM 0% per PP 74/2021. Hemat jutaan per tahun.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <div class="feature-number">PM<span>2.5</span></div>
+      <div class="feature-title">Panoramic Sunroof + Air Filter</div>
+      <div class="feature-desc">Panoramic sunroof electric slide dengan anti-trap. Filter PM2.5 untuk kabin bebas polusi.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ SPESIFIKASI ═══ -->
+<section class="specs">
+  <div class="section-header">
+    <div class="section-eyebrow">Data Teknis</div>
+    <div class="section-title">SPESIFIKASI <em>LENGKAP</em></div>
+  </div>
+
+  <div class="specs-layout">
+    <div class="spec-group">
+      <div class="spec-group-title">Baterai & Performa</div>
+      <div class="spec-row">
+        <span class="spec-key">Kapasitas Baterai</span>
+        <span class="spec-val accent">49,92 kWh</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Jarak Tempuh (NEDC)</span>
+        <span class="spec-val accent">410 km</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">DC Fast Charging</span>
+        <span class="spec-val">70 kW</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Waktu Cas (10–80%)</span>
+        <span class="spec-val">±45 Menit</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tipe Baterai</span>
+        <span class="spec-val">Blade LFP</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Penggerak</span>
+        <span class="spec-val">FWD (2WD)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-title">Dimensi & Bodi</div>
+      <div class="spec-row">
+        <span class="spec-key">Panjang × Lebar × Tinggi</span>
+        <span class="spec-val">4455 × 1875 × 1615 mm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Ground Clearance</span>
+        <span class="spec-val">175 mm</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Kapasitas Penumpang</span>
+        <span class="spec-val">5 Orang</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Ukuran Ban</span>
+        <span class="spec-val">235/50 R18</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Tipe Bodi</span>
+        <span class="spec-val">SUV 5-Pintu</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Transmisi</span>
+        <span class="spec-val">Otomatis (1-Speed)</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-title">Interior & Teknologi</div>
+      <div class="spec-row">
+        <span class="spec-key">Layar Infotainment</span>
+        <span class="spec-val accent">15,6 Inci Rotasi</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Sistem Audio</span>
+        <span class="spec-val">6 Speaker</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Wireless Charger</span>
+        <span class="spec-val accent">✓ Ada</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Panoramic Sunroof</span>
+        <span class="spec-val accent">✓ Electric Slide</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">PM2.5 Air Filter</span>
+        <span class="spec-val accent">✓ Ada</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">One-Touch Tailgate</span>
+        <span class="spec-val accent">✓ Ada</span>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-title">Garansi & Harga</div>
+      <div class="spec-row">
+        <span class="spec-key">Garansi Baterai</span>
+        <span class="spec-val accent">8 Tahun / 160.000 km</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Garansi Kendaraan</span>
+        <span class="spec-val">6 Tahun / 150.000 km</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">OTR Jakarta</span>
+        <span class="spec-val">Rp 415.000.000</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">OTR Makassar</span>
+        <span class="spec-val accent">Rp 431.000.000</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">PPnBM</span>
+        <span class="spec-val accent">0% (PP No. 74/2021)</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">PKB Sulawesi Selatan</span>
+        <span class="spec-val accent">0% (Pergub Sulsel)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ ADAS ═══ -->
+<section class="adas">
+  <div class="section-header">
+    <div class="section-eyebrow">Safety</div>
+    <div class="section-title">ADAS <em>AKTIF</em></div>
+    <p class="section-sub">5 sistem keselamatan aktif bawaan — bukan tambahan berbayar. Standar di semua varian Advanced Plus.</p>
+  </div>
+
+  <div class="adas-grid">
+    <div class="adas-item">
+      <div class="adas-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="adas-name">Automatic Emergency Braking</div>
+    </div>
+    <div class="adas-item">
+      <div class="adas-icon-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="adas-name">Stop & Go Adaptive Cruise Control</div>
+    </div>
+    <div class="adas-item">
+      <div class="adas-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+      </div>
+      <div class="adas-name">Lane Departure Warning</div>
+    </div>
+    <div class="adas-item">
+      <div class="adas-icon-wrap">
+        <svg viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+      </div>
+      <div class="adas-name">Lane Keeping Assist</div>
+    </div>
+    <div class="adas-item">
+      <div class="adas-icon-wrap">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+      </div>
+      <div class="adas-name">Door Open Warning</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ WARNA ═══ -->
+<section class="colors">
+  <div class="section-header">
+    <div class="section-eyebrow">Eksterior</div>
+    <div class="section-title">PILIHAN <em>WARNA</em></div>
+    <p class="section-sub">4 pilihan eksterior premium — semua dipadukan dengan interior hitam elegan.</p>
+  </div>
+
+  <div class="colors-row">
+    <div class="color-option">
+      <div class="color-swatch" style="background: radial-gradient(circle at 35% 30%, #5a6b7a, #2c3840 60%, #1a252c);"></div>
+      <div class="color-name">Harbour Grey</div>
+    </div>
+    <div class="color-option">
+      <div class="color-swatch" style="background: radial-gradient(circle at 35% 30%, #ffffff, #d8e0e8 60%, #b0bac4);"></div>
+      <div class="color-name">Ski White</div>
+    </div>
+    <div class="color-option">
+      <div class="color-swatch" style="background: radial-gradient(circle at 35% 30%, #3a3a3a, #141414 60%, #0a0a0a);"></div>
+      <div class="color-name">Cosmos Black</div>
+    </div>
+    <div class="color-option">
+      <div class="color-swatch" style="background: radial-gradient(circle at 35% 30%, #8ba0b0, #4a6070 60%, #2a3a48); border: 2px solid rgba(0,212,255,0.3);"></div>
+      <div class="color-name">Atlantis Grey ✦ NEW</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ PERBANDINGAN VARIAN ═══ -->
+<section class="compare">
+  <div class="section-header">
+    <div class="section-eyebrow">Lineup Atto 3</div>
+    <div class="section-title">PILIH <em>VARIAN</em></div>
+    <p class="section-sub">Advanced Plus adalah sweet spot — lebih lengkap dari base, lebih terjangkau dari top variant.</p>
+  </div>
+
+  <div class="compare-table">
+    <div class="compare-header">
+      <div class="compare-cell">Fitur</div>
+      <div class="compare-cell">Advanced</div>
+      <div class="compare-cell highlight">⭐ Advanced Plus</div>
+      <div class="compare-cell">Superior</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">
+        <div class="variant-label">Harga OTR Makassar</div>
+      </div>
+      <div class="compare-cell" style="color:var(--muted)">~Rp 405 jt</div>
+      <div class="compare-cell highlight" style="font-weight:700; font-size:15px;">Rp 431 jt</div>
+      <div class="compare-cell" style="color:var(--muted)">~Rp 535 jt</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">Kapasitas Baterai</div>
+      <div class="compare-cell">49,92 kWh</div>
+      <div class="compare-cell highlight">49,92 kWh</div>
+      <div class="compare-cell">60,48 kWh</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">Jarak Tempuh</div>
+      <div class="compare-cell">320 km</div>
+      <div class="compare-cell highlight" style="color:var(--cyan); font-weight:600;">410 km ▲</div>
+      <div class="compare-cell">480 km</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">Panoramic Sunroof</div>
+      <div class="compare-cell check-no">—</div>
+      <div class="compare-cell check-yes highlight">✓</div>
+      <div class="compare-cell check-yes">✓</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">ADAS Lengkap (5 Fitur)</div>
+      <div class="compare-cell check-no">—</div>
+      <div class="compare-cell check-yes highlight">✓</div>
+      <div class="compare-cell check-yes">✓</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">PM2.5 Air Filter</div>
+      <div class="compare-cell check-no">—</div>
+      <div class="compare-cell check-yes highlight">✓</div>
+      <div class="compare-cell check-yes">✓</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">Wireless Charger</div>
+      <div class="compare-cell check-yes">✓</div>
+      <div class="compare-cell check-yes highlight">✓</div>
+      <div class="compare-cell check-yes">✓</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">DC Fast Charging</div>
+      <div class="compare-cell">70 kW</div>
+      <div class="compare-cell highlight">70 kW</div>
+      <div class="compare-cell">88 kW</div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">Warna Eksklusif</div>
+      <div class="compare-cell check-no">—</div>
+      <div class="compare-cell check-yes highlight">Atlantis Grey</div>
+      <div class="compare-cell check-no">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-bottom">
+  <div class="section-eyebrow" style="justify-content:center; margin-bottom:20px;">
+    <span>Hubungi Kami Sekarang</span>
+  </div>
+  <div class="cta-title">
+    SIAP TEST DRIVE?<br><span style="color:var(--cyan)">KAMI ANTAR KE LOKASI.</span>
+  </div>
+  <p style="font-size:14px; color:var(--muted); max-width:480px; margin:0 auto; line-height:1.8; letter-spacing:0.5px;">
+    Sales consultant kami siap membantu simulasi kredit, jadwal test drive, dan proses SPK. Proses cepat, transparan, dan profesional.
+  </p>
+
+  <div class="cta-contact-grid">
+    <div class="cta-contact-item">
+      <div class="contact-label">WhatsApp / Call</div>
+      <div class="contact-value">0822 5945 2349</div>
+      <div class="contact-sub">AWI · Sales Consultant BYD</div>
+    </div>
+    <div class="cta-contact-item">
+      <div class="contact-label">Showroom</div>
+      <div class="contact-value">BYD Haka Karebosi</div>
+      <div class="contact-sub">Jl. Ahmad Yani No.15, Makassar</div>
+    </div>
+    <div class="cta-contact-item">
+      <div class="contact-label">Website</div>
+      <div class="contact-value">bydhakamakassar.id</div>
+      <div class="contact-sub">Info promo & stok terkini</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-logo">BYD HAKA MAKASSAR</div>
+  <p>© 2026 · BYD Haka Karebosi · Authorized Dealer Sulawesi Selatan</p>
+  <p style="text-align:right;">Harga OTR Makassar · Dapat berubah sewaktu-waktu</p>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .spec-group, .adas-item, .color-option, .compare-row').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Stagger adas items
+  document.querySelectorAll('.adas-item').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  document.querySelectorAll('.feature-card').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  document.querySelectorAll('.color-option').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.12}s`;
+  });
+</script>
+</body>
+</html>
